@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="26e179cc-b193-4e76-b289-d23d78d21623"
+  name="QuizITT_Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="23c77493-6168-473a-84b0-a4c8c38d909f"
+        name="Utente"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="6e115523-a4ab-43ac-89c2-666526198521"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="dc1e2b1c-e116-4fcc-828c-de7f6380d81d"
+              LastKnownName="Giocatore  Registrato"
+              LastKnownLocation="QuizITT_Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="1f115670-7a49-4650-ad8c-628f7f6f64a3"
+            isDerived="false"
+            sourceEndRoleName="Utente"
+            targetEndRoleName="Registrazione"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="479f4d6c-f258-4836-b479-c09e4b657ed2"
+              LastKnownName="Registrazione"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="07c61a83-b9d3-42e6-a625-4dbe0b80ad5b"
+                  name="Utente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0c9dd01-e659-44a6-a3e9-5f8be6febd1a"
+                  name="Registrazione"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+        name="Application"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="dc1e2b1c-e116-4fcc-828c-de7f6380d81d"
+        name="Giocatore  Registrato"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="86617ccf-1e72-4ccb-96f8-45f5f82e87ca"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Difficoltà automatica"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="48cb9445-9808-4e7d-92e2-189e9c1ac743"
+              LastKnownName="Difficoltà automatica"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5cbce1d8-8c1a-49cb-91e6-4080883535e6"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30281092-7e19-4708-afb5-32440f392756"
+                  name="Difficoltà automatica"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fdc40fd8-eeac-4e32-a398-1c467541b1e1"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Difficoltà fissa"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="08132fea-b9f6-4213-90c7-e0228591a7be"
+              LastKnownName="Difficoltà fissa"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91d87e7f-5ad2-48c6-a941-7b63ac6622ba"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ec4cd7e9-ceb3-4d39-9a6d-4cf88164eb0f"
+                  name="Difficoltà fissa"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f4cbce40-0c88-4f19-8461-ecf6f1dff60e"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Time Attack"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5df8bef5-ee2b-4a57-9b01-b758e2c9a170"
+              LastKnownName="Time Attack"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6c3f1433-22e7-45a1-9a27-d23c4da71835"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6fb012cc-e76c-4a5f-b825-af981507b8ed"
+                  name="Time Attack"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="df49154c-b6dc-4360-be51-afc5bdab99bd"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Insane Mode"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b8a8339b-8cf8-4ffa-a3ba-26072146d38e"
+              LastKnownName="Insane Mode"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ab61689c-7755-4d28-8dd8-da733f49b12b"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d536cedb-1fe5-423d-af1c-eaee3b0e2eb7"
+                  name="Insane Mode"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="121789f6-7302-481a-b350-7b1af663d151"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Impostazioni"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fdbfb922-5d3e-4d9e-9cf0-1c551873ca21"
+              LastKnownName="Impostazioni"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cc3fa17b-f8e0-498d-9bde-9b38e22c81fd"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2aaed8bc-5d2c-400e-8283-31be6ec00d91"
+                  name="Impostazioni"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f62bcf27-e78f-473b-8f71-b5d76e07b51c"
+            isDerived="false"
+            sourceEndRoleName="Giocatore  Registrato"
+            targetEndRoleName="Scheda giocatore"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="23dcfa84-5f09-431d-8a60-e3648ea56d48"
+              LastKnownName="Scheda giocatore"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ad1c1e12-8b91-446b-b6ed-a65beedbf10a"
+                  name="Giocatore  Registrato"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a553e560-0f12-4a30-b08d-eb7bbd430ad3"
+                  name="Scheda giocatore"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="479f4d6c-f258-4836-b479-c09e4b657ed2"
+        name="Registrazione"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="f212f11c-0053-4992-a4b6-187752af7bc4">
+            <useCaseMoniker
+              Id="3bc804f5-b821-4b4e-94fc-d77ddf5a0a82"
+              LastKnownName="Scelta Specializzazione"
+              LastKnownLocation="QuizITT_Model.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3bc804f5-b821-4b4e-94fc-d77ddf5a0a82"
+        name="Scelta Specializzazione"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="48cb9445-9808-4e7d-92e2-189e9c1ac743"
+        name="Difficoltà automatica"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b6e86ce8-eb6e-4043-8e48-bf21f2a4febc"
+            isDerived="false"
+            sourceEndRoleName="Difficoltà automatica"
+            targetEndRoleName="Riepilogo risultati"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03"
+              LastKnownName="Riepilogo risultati"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="472b9d78-281f-41c3-b6db-ee792c86cc87"
+                  name="Difficoltà automatica"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="53d82b6a-c4c9-429b-bd9d-df10268ccaeb"
+                  name="Riepilogo risultati"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="08132fea-b9f6-4213-90c7-e0228591a7be"
+        name="Difficoltà fissa"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4992c3b5-1b89-460f-ad56-87351eb06c29"
+            isDerived="false"
+            sourceEndRoleName="Difficoltà fissa"
+            targetEndRoleName="Riepilogo risultati"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03"
+              LastKnownName="Riepilogo risultati"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f2508b3-3621-4149-9f39-a9c402b84398"
+                  name="Difficoltà fissa"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d04a278b-c228-42d7-a679-eab6039e2cb5"
+                  name="Riepilogo risultati"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="92ae7339-b1ea-4d2d-ae7b-e85cf87888e4">
+            <useCaseMoniker
+              Id="32a643f3-0ac7-444e-bbb0-2283ff282824"
+              LastKnownName="Scelta difficoltà"
+              LastKnownLocation="QuizITT_Model.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5df8bef5-ee2b-4a57-9b01-b758e2c9a170"
+        name="Time Attack"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="7e1da794-6ce0-4f35-984e-24f7de763d15"
+            isDerived="false"
+            sourceEndRoleName="Time Attack"
+            targetEndRoleName="Riepilogo risultati"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03"
+              LastKnownName="Riepilogo risultati"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="43d85315-1980-48a5-b19e-ed53ca87958a"
+                  name="Time Attack"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="82f44f01-5a9d-4916-b8da-f6a1176a8ea6"
+                  name="Riepilogo risultati"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b8a8339b-8cf8-4ffa-a3ba-26072146d38e"
+        name="Insane Mode"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="066ca14c-a4fd-4e6e-8fc9-fac0f5141c38"
+            isDerived="false"
+            sourceEndRoleName="Insane Mode"
+            targetEndRoleName="Riepilogo risultati"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03"
+              LastKnownName="Riepilogo risultati"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7ded8259-3792-48a2-9543-15e2c2201712"
+                  name="Insane Mode"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="24d5de94-1455-498d-a479-d5cbbc238d65"
+                  name="Riepilogo risultati"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="32a643f3-0ac7-444e-bbb0-2283ff282824"
+        name="Scelta difficoltà"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03"
+        name="Riepilogo risultati"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="9a0129c5-097d-4bf3-af89-d3b20ed67e26"
+            isDerived="false"
+            sourceEndRoleName="Riepilogo risultati"
+            targetEndRoleName="Salvataggio"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1cfff629-a338-430d-b2fb-8c445660ab36"
+              LastKnownName="Salvataggio"
+              LastKnownLocation="QuizITT_Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f41f4d90-c53a-4075-b075-28dc6b753873"
+                  name="Riepilogo risultati"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1ca5659-2e4e-40ab-8daa-c58552390f88"
+                  name="Salvataggio"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1cfff629-a338-430d-b2fb-8c445660ab36"
+        name="Salvataggio"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="90e278cf-4c6d-49bb-a67e-337a5b0cb228"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fdbfb922-5d3e-4d9e-9cf0-1c551873ca21"
+        name="Impostazioni"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="23dcfa84-5f09-431d-8a60-e3648ea56d48"
+        name="Scheda giocatore"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="1ca9ad0f-e23a-4d27-8162-0b022e61ab85">
+            <useCaseMoniker
+              Id="ad9f9bb5-173d-43ba-8821-faa64a267ff3"
+              LastKnownName="Lettura e conteggio di tutti i punteggi"
+              LastKnownLocation="QuizITT_Model.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ad9f9bb5-173d-43ba-8821-faa64a267ff3"
+        name="Lettura e conteggio di tutti i punteggi"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="066ac681-0f18-42b0-ba5b-866f24e12f7e"
+        name="Reset"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="71f1ab15-dff9-45b4-828c-3099c353f58a">
+            <useCaseMoniker
+              Id="fdbfb922-5d3e-4d9e-9cf0-1c551873ca21"
+              LastKnownName="Impostazioni"
+              LastKnownLocation="QuizITT_Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="1221cabd-0368-4215-905a-f83e8e6b074d"
+            LastKnownName="Application"
+            LastKnownLocation="QuizITT_Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

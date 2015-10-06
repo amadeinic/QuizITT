@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="41f317db-9689-4523-a5e7-e00feed5e0d2" name="UMLMain" linkedPackageId="44195fa0-4035-4841-86a0-fe1aab6c2e18" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="75266a5e-5339-48a4-b50d-341316240633">
+      <profileInstance Id="add4704c-07ce-4f40-88e9-0c1ec184b684" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="0cfc4275-936d-4746-8bd5-57f3b442dc60">
+      <profileInstance Id="54290c21-4ceb-4b80-aec4-1d92d8705ec0" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="951ede2d-ed5d-4e20-b91e-acd6fc3d77cb" name="Utente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="23c77493-6168-473a-84b0-a4c8c38d909f" />
+        <generalsInternal>
+          <generalization Id="89b7ab21-49af-4892-a2af-68b55cbfd8ca" isSubstitutable="false">
+            <actorMoniker Id="a4596efe-f3ea-4016-8fc5-de92469df5af" LastKnownName="Giocatore  Registrato" />
+            <elementDefinition Id="6e115523-a4ab-43ac-89c2-666526198521" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="8a1ac175-6388-4bc8-8b54-91a887131ef3" isDerived="false" sourceEndRoleName="Utente" targetEndRoleName="Registrazione" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c5d39e9b-1ee0-4714-859d-7475b01b2062" LastKnownName="Registrazione" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7bdf700c-a765-451b-9d2f-d7113f7f425b" name="Utente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="07c61a83-b9d3-42e6-a625-4dbe0b80ad5b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ca0f9986-e4a2-4850-8a63-ab7be93b9d9b" name="Registrazione" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a0c9dd01-e659-44a6-a3e9-5f8be6febd1a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1f115670-7a49-4650-ad8c-628f7f6f64a3" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" name="Application" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1221cabd-0368-4215-905a-f83e8e6b074d" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a4596efe-f3ea-4016-8fc5-de92469df5af" name="Giocatore  Registrato" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dc1e2b1c-e116-4fcc-828c-de7f6380d81d" />
+        <targetEnds>
+          <association Id="7037080b-0cb5-4c92-b3df-2cee9b5892ea" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Difficoltà automatica" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5ec370ff-f21f-4149-86e1-880bfab39126" LastKnownName="Difficoltà automatica" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="708e8d13-6062-430f-af2a-4478651addb4" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5cbce1d8-8c1a-49cb-91e6-4080883535e6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f47a4ce3-7a4f-49f4-bb8d-6e326bc58ad0" name="Difficoltà automatica" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="30281092-7e19-4708-afb5-32440f392756" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86617ccf-1e72-4ccb-96f8-45f5f82e87ca" />
+          </association>
+          <association Id="18925318-a353-4202-aaaf-dbbdbcb3ca21" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Difficoltà fissa" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="833ef14b-bf19-425c-aee2-73d8c80e1882" LastKnownName="Difficoltà fissa" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f383a04-5698-4e1a-aa34-2881f176f1b4" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="91d87e7f-5ad2-48c6-a941-7b63ac6622ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0455324-88de-4cbc-882b-f418a1f5fafa" name="Difficoltà fissa" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ec4cd7e9-ceb3-4d39-9a6d-4cf88164eb0f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fdc40fd8-eeac-4e32-a398-1c467541b1e1" />
+          </association>
+          <association Id="7f6fdf17-eb77-4f8e-92bf-a6c224674b57" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Time Attack" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d721c67f-d807-4ad6-b77b-466dc0ef5f4d" LastKnownName="Time Attack" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ea471a8-0f76-4c75-80b0-e12792974292" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6c3f1433-22e7-45a1-9a27-d23c4da71835" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e27bb89-371b-4279-9be5-aa1a00999373" name="Time Attack" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6fb012cc-e76c-4a5f-b825-af981507b8ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f4cbce40-0c88-4f19-8461-ecf6f1dff60e" />
+          </association>
+          <association Id="dc102472-a572-49f3-9e53-6b95f64f9080" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Insane Mode" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b4b23ad9-206b-47e7-9460-bca33e716c13" LastKnownName="Insane Mode" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="edfadba1-99ad-4725-a733-4a8d756d4360" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ab61689c-7755-4d28-8dd8-da733f49b12b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3457c08f-09b1-4489-864e-8f88d5a770da" name="Insane Mode" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d536cedb-1fe5-423d-af1c-eaee3b0e2eb7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="df49154c-b6dc-4360-be51-afc5bdab99bd" />
+          </association>
+          <association Id="5a506fd7-a7fa-4d7f-9edd-38beabd42b63" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Impostazioni" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="97bd918b-d49b-4a69-8e83-4010c9ab24ef" LastKnownName="Impostazioni" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ceafb81-b167-45c4-bc58-061f6c37e349" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cc3fa17b-f8e0-498d-9bde-9b38e22c81fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5f12dd2c-c2a1-42d4-9aec-0202858b4e44" name="Impostazioni" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2aaed8bc-5d2c-400e-8283-31be6ec00d91" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="121789f6-7302-481a-b350-7b1af663d151" />
+          </association>
+          <association Id="1097cbc0-eb85-4148-a96a-f91c94474c2e" isDerived="false" sourceEndRoleName="Giocatore  Registrato" targetEndRoleName="Scheda giocatore" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="670bf92c-04ac-4e34-97de-5a80c8d9c6aa" LastKnownName="Scheda giocatore" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a23b003-1865-4256-a18a-2f2e6024a1d7" name="Giocatore  Registrato" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ad1c1e12-8b91-446b-b6ed-a65beedbf10a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c925340-5c03-4200-a4bf-93835ae12963" name="Scheda giocatore" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a553e560-0f12-4a30-b08d-eb7bbd430ad3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f62bcf27-e78f-473b-8f71-b5d76e07b51c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="c5d39e9b-1ee0-4714-859d-7475b01b2062" name="Registrazione" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="479f4d6c-f258-4836-b479-c09e4b657ed2" />
+        <additions>
+          <include Id="8c5b723d-4ddc-407f-a488-3b4a21f1af49">
+            <useCaseMoniker Id="380cff90-a36e-45c7-86b1-fe9200111a3d" LastKnownName="Scelta Specializzazione" />
+            <elementDefinition Id="f212f11c-0053-4992-a4b6-187752af7bc4" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="380cff90-a36e-45c7-86b1-fe9200111a3d" name="Scelta Specializzazione" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bc804f5-b821-4b4e-94fc-d77ddf5a0a82" />
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5ec370ff-f21f-4149-86e1-880bfab39126" name="Difficoltà automatica" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="48cb9445-9808-4e7d-92e2-189e9c1ac743" />
+        <targetEnds>
+          <association Id="e07e1894-51d8-4ca8-a5dc-f3b92de2f065" isDerived="false" sourceEndRoleName="Difficoltà automatica" targetEndRoleName="Riepilogo risultati" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bd52a7f8-4811-447f-b3c5-3eebea6c3fa2" LastKnownName="Riepilogo risultati" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1595d3b-93f0-43dd-a2f6-f2bf6dafdb85" name="Difficoltà automatica" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="472b9d78-281f-41c3-b6db-ee792c86cc87" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4e8c6ed1-4a5c-4d55-8915-42ce77616a95" name="Riepilogo risultati" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="53d82b6a-c4c9-429b-bd9d-df10268ccaeb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b6e86ce8-eb6e-4043-8e48-bf21f2a4febc" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="833ef14b-bf19-425c-aee2-73d8c80e1882" name="Difficoltà fissa" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="08132fea-b9f6-4213-90c7-e0228591a7be" />
+        <targetEnds>
+          <association Id="f92a095c-99e2-4534-94bd-9137c131d91a" isDerived="false" sourceEndRoleName="Difficoltà fissa" targetEndRoleName="Riepilogo risultati" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bd52a7f8-4811-447f-b3c5-3eebea6c3fa2" LastKnownName="Riepilogo risultati" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b080363-4015-4ba4-b107-c4739d3dcfec" name="Difficoltà fissa" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2f2508b3-3621-4149-9f39-a9c402b84398" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1e5c69c4-277a-4b66-8de6-5f0e3f28d9f5" name="Riepilogo risultati" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d04a278b-c228-42d7-a679-eab6039e2cb5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4992c3b5-1b89-460f-ad56-87351eb06c29" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="c871d98e-2cba-40af-9dbd-e4faa2c51d96">
+            <useCaseMoniker Id="19aff271-8a54-4ed5-8403-c2b7c6dab568" LastKnownName="Scelta difficoltà" />
+            <elementDefinition Id="92ae7339-b1ea-4d2d-ae7b-e85cf87888e4" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="d721c67f-d807-4ad6-b77b-466dc0ef5f4d" name="Time Attack" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5df8bef5-ee2b-4a57-9b01-b758e2c9a170" />
+        <targetEnds>
+          <association Id="67334724-3de8-41e2-8ff8-851e5d14dbd1" isDerived="false" sourceEndRoleName="Time Attack" targetEndRoleName="Riepilogo risultati" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bd52a7f8-4811-447f-b3c5-3eebea6c3fa2" LastKnownName="Riepilogo risultati" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="990cc6bd-5811-416e-b8fc-e2daabc5239b" name="Time Attack" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43d85315-1980-48a5-b19e-ed53ca87958a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ad356f8-dac2-4e7a-8387-a93769cfa43b" name="Riepilogo risultati" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="82f44f01-5a9d-4916-b8da-f6a1176a8ea6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7e1da794-6ce0-4f35-984e-24f7de763d15" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b4b23ad9-206b-47e7-9460-bca33e716c13" name="Insane Mode" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b8a8339b-8cf8-4ffa-a3ba-26072146d38e" />
+        <targetEnds>
+          <association Id="47db710d-f6c7-42ac-8de0-319a9ad4d1c6" isDerived="false" sourceEndRoleName="Insane Mode" targetEndRoleName="Riepilogo risultati" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bd52a7f8-4811-447f-b3c5-3eebea6c3fa2" LastKnownName="Riepilogo risultati" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="347a6e7d-c222-449a-bbec-b7a5573bd5c9" name="Insane Mode" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7ded8259-3792-48a2-9543-15e2c2201712" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eba3e222-c44f-409f-861a-63b7d4b7d7db" name="Riepilogo risultati" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="24d5de94-1455-498d-a479-d5cbbc238d65" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="066ca14c-a4fd-4e6e-8fc9-fac0f5141c38" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="19aff271-8a54-4ed5-8403-c2b7c6dab568" name="Scelta difficoltà" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32a643f3-0ac7-444e-bbb0-2283ff282824" />
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="bd52a7f8-4811-447f-b3c5-3eebea6c3fa2" name="Riepilogo risultati" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="62a1c90e-4788-4bf9-9f42-5ad4483a7d03" />
+        <targetEnds>
+          <association Id="32d01389-93e3-40f8-ac28-dcbd7d6cff5a" isDerived="false" sourceEndRoleName="Riepilogo risultati" targetEndRoleName="Salvataggio" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f5bca968-6cfc-42f2-bb42-f0959791586e" LastKnownName="Salvataggio" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5534bbe9-0c5d-4999-be5d-873c7610b191" name="Riepilogo risultati" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f41f4d90-c53a-4075-b075-28dc6b753873" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13ed24e9-6fb8-475f-9be1-2f7c737460f5" name="Salvataggio" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f1ca5659-2e4e-40ab-8daa-c58552390f88" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9a0129c5-097d-4bf3-af89-d3b20ed67e26" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f5bca968-6cfc-42f2-bb42-f0959791586e" name="Salvataggio" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1cfff629-a338-430d-b2fb-8c445660ab36" />
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="97bd918b-d49b-4a69-8e83-4010c9ab24ef" name="Impostazioni" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fdbfb922-5d3e-4d9e-9cf0-1c551873ca21" />
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="670bf92c-04ac-4e34-97de-5a80c8d9c6aa" name="Scheda giocatore" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="23dcfa84-5f09-431d-8a60-e3648ea56d48" />
+        <additions>
+          <include Id="4354e425-69c6-45c2-a196-cc4291f40b0d">
+            <useCaseMoniker Id="4c659ac9-8623-42be-a1a6-a48cf9213c79" LastKnownName="Lettura e conteggio di tutti i punteggi" />
+            <elementDefinition Id="1ca9ad0f-e23a-4d27-8162-0b022e61ab85" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4c659ac9-8623-42be-a1a6-a48cf9213c79" name="Lettura e conteggio di tutti i punteggi" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ad9f9bb5-173d-43ba-8821-faa64a267ff3" />
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4d4cb512-52c3-49e4-8aec-05b01184e5dc" name="Reset" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="066ac681-0f18-42b0-ba5b-866f24e12f7e" />
+        <extendedCases>
+          <extend Id="bd4301de-81de-40a9-9010-7a8af2b634f9">
+            <useCaseMoniker Id="97bd918b-d49b-4a69-8e83-4010c9ab24ef" LastKnownName="Impostazioni" />
+            <elementDefinition Id="71f1ab15-dff9-45b4-828c-3099c353f58a" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="03a8edef-8d5e-40b7-bc1e-5f3fc39dac96" LastKnownName="Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="44195fa0-4035-4841-86a0-fe1aab6c2e18" name="QuizITT_Model">
+    <elementDefinition Id="26e179cc-b193-4e76-b289-d23d78d21623" />
+  </package>
+</useCaseModelRoot>
