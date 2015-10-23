@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="QuizITT_WP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuizITT_WP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot>
+            <PivotItem Header="QuizITT">
+                <Grid>
+                    <!--Inizio design grid-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--Fine design grid-->
+                    <StackPanel Orientation="Vertical" 
+                                Grid.Row="0">
+                        <TextBlock Name="lblCiao" 
+                                   FontSize="18" 
+                                   Text="Ciao utente! Bentornato su QuizITT"/>
+                        <TextBlock Name="lblIndicazioni" 
+                                   Margin="1" 
+                                   FontSize="12" 
+                                   Text="Scegli una modalità per iniziare"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" 
+                                Grid.Row="1">
+                        <Image Source="Assets/brain.png"  
+                               Margin="10" 
+                               Height="180"></Image>
+                        <TextBlock Text="Tocca per vedere i tuoi progressi" 
+                                   FontSize="12" 
+                                   HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" 
+                                Grid.Row="2" 
+                                VerticalAlignment="Bottom" 
+                                Margin="0,0,0,20">
+                        <Button Name="btnPlayClassic" 
+                                Content="Classic Quiz" 
+                                FontSize="26" 
+                                HorizontalAlignment="Stretch"></Button>
+                        <Button Name="btnPlayTime" 
+                                Content="Time Attack" 
+                                FontSize="26" 
+                                HorizontalAlignment="Stretch"></Button>
+                        <Button Name="btnPlayInsane" 
+                                Content="Insane Mode" 
+                                FontSize="26"                                 
+                                HorizontalAlignment="Stretch" 
+                                FontFamily="Global User Interface"></Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Impostazioni">
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Nome" FontSize="24" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Cognome" FontSize="24" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Nato il" FontSize="24" Grid.Row="2"  VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Specializ." FontSize="24" Grid.Row="3" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox Name="txtImpNome" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,4"></TextBox>
+                        <TextBox Name="txtImpCognome" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,4"></TextBox>
+                        <DatePicker Name="dpkImpData" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center"></DatePicker>
+                        <ComboBox Name="cmbImpSpec" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedIndex="0">
+                            <ComboBoxItem Content="Informatica"/>
+                            <ComboBoxItem Content="Meccanica"/>
+                            <ComboBoxItem Content="Eelettronica"/>
+                            <ComboBoxItem Content="Chimica"/>
+                            <ComboBoxItem Content="Costruzioni"/>
+                        </ComboBox>
+
+                        <Button Name="btnImpostaUtente" Content="Imposta utente" Grid.Row="4" HorizontalAlignment="Stretch" Grid.ColumnSpan="3"></Button>
+
+                        <Button Name="btnReset" Content="Reset totale" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="10,0,9.667,26"></Button>
+
+
+                    </Grid>
+
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
