@@ -1,0 +1,56 @@
+questionId;categoryId;level;questionText;answer1;a1right;answer2;a2right;answer3;a3right
+1;15;1;Il while è un ciclo:;Precondizionale;true;Non è un ciclo;false;Postcondizionale;false
+2;15;1;Agisce come collettore di cavi:;Hub;true;Switch;false;Router;false
+3;15;2;Dovendo verificare l'appartenenza di un numero ad uno di diversi range di valori, utilizzo:;Diversi if;true;Uno Switch-case;false;Un ciclo for;false
+4;15;2;Permette di uniformare la lunghezza di una stringa:;PadRight();true;AlignThis();false;AddSpaces();false
+5;15;4;In Java sono direttive di compilazione:;import;true;include;false;using;false
+6;15;4;Sono direttive di compilazione in C#:;using ;true;include;false;assembly;false
+7;15;1;La programmazione classica è anche detta:;Procedurale;true;Orientata agli eventi;false;OOP;false
+8;15;1;Cosa significa l'acronimo OOP?;Object Oriented Programming;true;Orienteering Objecting Program;false;Open Office Presentation;false
+9;15;1;SQL è un linguaggio:;Dichiarativo;true;Legislativo;false;Esecutivo;false
+10;15;4;Posso controllare l'integrità di un DB tramite istruzioni:;DDL;true;DLL;false;MDBI;false
+11;15;4;La struttura Color appartiene al namespace:;System.Drawing;true;System.Display;false;System.Colors;false
+12;14;2;Sono verbi modali:;Can, Shall, Will;true;Will, Must, Do;false;Get, Should, Would;false
+13;14;2;Il paradigma di eat:;eat, ate, eaten;true;eat, ate, eat;false;eat, ate, eated;false
+14;14;4;"His masterpiece was ""The Canterbury Tales""";Geoffrey Chaucer;true;James Joyce;false;Jeffrey Chaucer;false
+15;11;4;"Scrisse ""Ode a Luigia Pallavicini caduta da cavallo""";Ugo Foscolo;true;Giacomo Leopardi;false;Giovanni Boccaccio;false
+16;11;2;Dettò i princìpi dell'amor cortese;Andrea Cappellano;true;Placito Capuano;false;Ugo Foscolo;false
+17;11;2;"Scrisse il ""De Amore""";Andrea Cappellano;true;Dante Alighieri;false;Moliere;false
+18;11;4;"Il ""Placito Capuano"" era un documento riguardante:";Proprietà terriere;true;Un conflitto familiare;false;La successione di Capua;false
+19;12;1;La rivoluzione francese avvenne:;nel 1789;true;nel 1879;false;nel 1798;false
+20;12;2;La primavera dei popoli fu:;il 1848;true;il 1948;false;il 1789;false
+21;12;2;Vincitori di Austerlitz;Russi;true;Francesi;false;Tedeschi;false
+22;12;2;In che città venne incoronato Carlo Magno?;Roma;true;Berlino;false;Parigi;false
+23;12;2;Dove venne firmato il trattato che pose fine alla Prima Guerra Mondiale?;Versailles;true;Parigi;false;Berlino;false
+24;12;4;La pace di Cateau Cambresis venne firmata:;nel 1559;true;nel 1266;false;nel 1342;false
+25;12;2;In che anno Vittorio Emanuele II venne proclamato re d'Italia?;nel 1861;true;nel 1870;false;nel 1946;false
+26;12;1;Il presidente degli stati uniti durante la guerra di secessione era:;Lincoln;true;Roosevelt;false;Obama;false
+27;12;4;Lo era quello del Missouri:;Compromesso, nel 1820;true;Compromesso, nel 1850;false;Trattato, 1870;false
+28;12;2;L'anno del crollo definitivo dell'impero romano d'occidente è:;il 476 d.c.;true;il 369 a.c.;false;il 320 d.c.;false
+29;12;4;Quale capitano francese riconquistò i territori di Calais nel 1558?;Francesco I di Guisa;true;Carlo I di Guisa;false;Guglielmo il Guiscardo;false
+30;12;4;Giovanni Maria Mastai Ferretti era:;Papa Pio IX;true;Papa Leone X;false;Papa Pio XI;false
+31;12;4;Papa Leone IX era nato a:;Senigallia;true;Firenze;false;Valpolicella;false
+32;12;4;Nel 1211 nasce quale ordine?;Francescani;true;Gesuiti;false;Scolopi;false
+33;12;2;L'ordine dei gesuiti nasce per iniziativa di:;Ignazio di Loyola;true;Gregorio XV;false;Enrico d'Albret;false
+34;12;2;Lo scopo principale dei padri Scolopi era:;L'istruzione;true;L'attenzione per il prossimo;false;La cura degli infermi;false
+35;12;4;Chi fu e quando morì l'ultimo sovrano del Regno di Sicilia?;Manfredi, 1266;true;Federico II, 1281;false;Manfredi, 1276;false
+36;11;4;Quale movimento nasce a seguito della caduta del Regno di Sicilia?;Dolce stil novo;true;Amor cortese;false;Classicismo;false
+37;11;4;Che professione praticava Jacopo da Lentini?;Il notaio;true;L'avvocato;false;Il mecenate;false
+38;11;2;"Chi scrisse ""Al cor gentil rempaira sempre amore""?";Guinizzelli;true;Da Lentini;false;Alighieri;false
+39;11;2;Adelaide Antici era la madre di:;Leopardi;true;Verga;false;Foscolo;false
+40;11;1;La guida di Dante:;Virgilio;true;Caronte;false;Alice;false
+41;12;2;Comportamento, in american english:;Behavior;true;Behaviour;false;Bheavior;false
+42;15;2;Il comando dos per risalire di un livello l'albero delle cartelle è:;cd .;true;cd sup;false; cd ..;false
+43;15;4;La console dei sistemi Linux;SSH;true;SHS;false;NSH;false
+44;15;1;Senza nessun modificatore, un attributo è di solito:;private;true;protected;false;static;false
+45;15;4;Il primo campo di argv[] è:;Path;true;Counter;false;Parametro 1;false
+46;15;2;Il passaggio dei dati può avvenire per :;Valore o riferimento;true;Costante o variabile;false;Riferimento o puntatore;false
+47;15;4;Il filesystem di Windows NT 6.2.9200 è;REFS;true;NTFS Standard;false;FAT32;false
+48;15;2;Il northbridge controlla:;La memoria;true;I dispositivi IO;false;Il processore e il chipset;false
+49;15;2;Il southbridge controlla:;I dispositvi IO;true;La memoria;false;La CPU;false
+50;15;4;Il Front Side Bus trasporta dati tra:;CPU e Northbridge;true;CPU e disp. IO;false;CPU e GPU;false
+51;15;2;La velocità di un bus è misurata in:;Megatransfer;true;Megabit;false;Km/h;true
+52;15;1;Ethernet è definito dallo standard;802.3;true;802.5;false;802.11;false
+53;15;1;Quale istruzione è illegale?;int nmb = O23;true;int nmb = 87,2;false;"string s = ""ciao""";false
+54;14;4;The Archbishop of Canterbury is:;Justin Welby;true;;false;;false
+55;14;2;For what we remember Thomas Cranmer?;The book of common prayer;true;The Canterbury tales;false;The english holy see;false

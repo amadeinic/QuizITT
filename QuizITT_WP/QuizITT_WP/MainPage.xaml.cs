@@ -22,6 +22,8 @@ namespace QuizITT_WP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        //GLOBALS
+        bool isUserReg = false;
         public MainPage()
         {
             this.InitializeComponent();
@@ -43,6 +45,15 @@ namespace QuizITT_WP
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Se l'utente è registrato rimani su home, altriemnti spedisci a impostazioni
+            if(!isUserReg)
+            {
+                pvtMain.SelectedIndex = 1;
+            }
         }
     }
 }
