@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuizITT_WP.Classes
+namespace QuizITT_WP
 {
-    class Answer
+    public class Answer
     {
         public string Text { get; set; }
         public bool IsRight { get; set; }

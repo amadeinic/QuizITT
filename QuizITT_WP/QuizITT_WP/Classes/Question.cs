@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuizITT_WP.Classes
+namespace QuizITT_WP
 {
-    class Question
+    public class Question
     {
         public int QuestionId { get; }
         public int Category { get; }
@@ -30,8 +30,38 @@ namespace QuizITT_WP.Classes
 
         public void MixAnswers()
         {
+            Random rnd = new Random();
+            int random = rnd.Next(0, 6);
+            Answer tmp;
+            for(int i=0, mescola; i<random;i++)
+            {
+                mescola = rnd.Next(0, 3);
+                switch(mescola)
+                {
+                    case 0:
+                        {
+                            tmp = Answers[0];
+                            Answers[0] = Answers[2];
+                            Answers[2] = tmp;
+                            break;
+                        }
+                    case 1:
+                        {
+                            tmp = Answers[1];
+                            Answers[1] = Answers[2];
+                            Answers[2] = tmp;
+                            break;
+                        }
+                    case 2:
+                        {
+                            tmp = Answers[0];
+                            Answers[0] = Answers[1];
+                            Answers[1] = tmp;
+                            break;
+                        }
+                }
+            }
 
         }
-
     }
 }

@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -20,10 +22,11 @@ namespace QuizITT_WP
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    
     public sealed partial class MainPage : Page
     {
-        //GLOBALS
-        bool isUserReg = false;
+        public List<Question> Domande { get; set; }
+        public Dictionary<int,string> Categorie { get; set; }
         public MainPage()
         {
             this.InitializeComponent();
@@ -31,29 +34,63 @@ namespace QuizITT_WP
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
-        /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: Prepare page for display here.
+            Domande = new List<Question>();
+            Categorie = new Dictionary<int, string>();
+            try
+            {
+                var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                Folder = await Folder.GetFolderAsync("QuizData");
+                var File = await Folder.GetFileAsync("questions.csv");
+                var lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
+                lines.RemoveAt(0);
+                foreach (string st in lines)
+                {
+                    Domande.Add(new Question(st));
+                }
 
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
+                File = await Folder.GetFileAsync("categories.csv");
+                lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
+                lines.RemoveAt(0);
+                foreach (string st in lines)
+                {
+                    Categorie.Add(Convert.ToInt32(st.Split(';')[0]), st.Split(';')[1]);
+                }
+                //foreach (Question q in Domande)
+                //{
+                //    if (Categorie.ContainsKey(q.Category))
+                //    {
+
+                //    }
+                //}
+                
+            }
+            catch (Exception exc)
+            {
+                MessageDialog msg = new MessageDialog("Ho rilevato un'eccezione durante la lettura dei databases!\n"+exc.Message,"Hey user!");
+                await msg.ShowAsync();
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
+        {            
+
+        }
+
+        private void btnPlayClassic_Click(object sender, RoutedEventArgs e)
         {
-            //Se l'utente è registrato rimani su home, altriemnti spedisci a impostazioni
-            if(!isUserReg)
-            {
-                pvtMain.SelectedIndex = 1;
-            }
+            this.Frame.Navigate(typeof(QuizPage),0);
+        }
+
+        private void btnPlayTime_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(QuizPage), 1);
+        }
+
+        private void btnPlayInsane_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(QuizPage), 2);
         }
     }
 }
