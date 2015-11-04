@@ -34,43 +34,9 @@ namespace QuizITT_WP
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Domande = new List<Question>();
-            Categorie = new Dictionary<int, string>();
-            try
-            {
-                var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-                Folder = await Folder.GetFolderAsync("QuizData");
-                var File = await Folder.GetFileAsync("questions.csv");
-                var lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
-                lines.RemoveAt(0);
-                foreach (string st in lines)
-                {
-                    Domande.Add(new Question(st));
-                }
-
-                File = await Folder.GetFileAsync("categories.csv");
-                lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
-                lines.RemoveAt(0);
-                foreach (string st in lines)
-                {
-                    Categorie.Add(Convert.ToInt32(st.Split(';')[0]), st.Split(';')[1]);
-                }
-                //foreach (Question q in Domande)
-                //{
-                //    if (Categorie.ContainsKey(q.Category))
-                //    {
-
-                //    }
-                //}
-                
-            }
-            catch (Exception exc)
-            {
-                MessageDialog msg = new MessageDialog("Ho rilevato un'eccezione durante la lettura dei databases!\n"+exc.Message,"Hey user!");
-                await msg.ShowAsync();
-            }
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -80,17 +46,17 @@ namespace QuizITT_WP
 
         private void btnPlayClassic_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(QuizPage),0);
+            this.Frame.Navigate(typeof(QuizPage),btnPlayClassic.Content);
         }
 
         private void btnPlayTime_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(QuizPage), 1);
+            this.Frame.Navigate(typeof(QuizPage),btnPlayTime.Content);
         }
 
         private void btnPlayInsane_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(QuizPage), 2);
+            this.Frame.Navigate(typeof(QuizPage), btnPlayInsane.Content);
         }
     }
 }

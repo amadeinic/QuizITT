@@ -16,19 +16,26 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
+using System.Threading;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace QuizITT_WP
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+{   
     public sealed partial class QuizPage : Page
     {
+        #region Dichiarazioni
+        int domandaCorrente;
+        int risposteCorrette = 0;
+        Question[] domandeScelte;
+        DispatcherTimer dt = new DispatcherTimer();
+        Random r = new Random();
+        public List<Question> Domande { get; set; }
+        public Dictionary<int, string> Categorie { get; set; }
+        MessageDialog msg;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-
+        #endregion
         public QuizPage()
         {
             this.InitializeComponent();
@@ -36,42 +43,109 @@ namespace QuizITT_WP
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
-        }
-
-        /// <summary>
-        /// Gets the <see cref="NavigationHelper"/> associated with this <see cref="Page"/>.
-        /// </summary>
+        }       
         public NavigationHelper NavigationHelper
         {
             get { return this.navigationHelper; }
-        }
-
-        /// <summary>
-        /// Gets the view model for this <see cref="Page"/>.
-        /// This can be changed to a strongly typed view model.
-        /// </summary>
+        }        
         public ObservableDictionary DefaultViewModel
         {
             get { return this.defaultViewModel; }
-        }
-
-        /// <summary>
-        /// Populates the page with content passed during navigation.  Any saved state is also
-        /// provided when recreating a page from a prior session.
-        /// </summary>
-        /// <param name="sender">
-        /// The source of the event; typically <see cref="NavigationHelper"/>
-        /// </param>
-        /// <param name="e">Event data that provides both the navigation parameter passed to
-        /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
-        /// a dictionary of state preserved by this page during an earlier
-        /// session.  The state will be null the first time a page is visited.</param>
+        }        
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            int modoQuiz = (int)e.NavigationParameter;
-            MessageDialog msg = new MessageDialog("Aho LoadState"+modoQuiz.ToString());
+            string modoQuiz = e.NavigationParameter as string;
+            lblIntestazione.Text = modoQuiz;
+            msg = new MessageDialog("Aho LoadState"+modoQuiz.ToString());
             await msg.ShowAsync();
-            
+            Domande = new List<Question>();
+            Categorie = new Dictionary<int, string>();
+            #region carica domande
+            try
+            {
+                var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                Folder = await Folder.GetFolderAsync("QuizData");
+                var File = await Folder.GetFileAsync("questions.csv");
+                var lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
+                lines.RemoveAt(0);
+                foreach (string st in lines)
+                {
+                    Domande.Add(new Question(st));
+                }
+
+                File = await Folder.GetFileAsync("categories.csv");
+                lines = await Windows.Storage.FileIO.ReadLinesAsync(File);
+                lines.RemoveAt(0);
+                foreach (string st in lines)
+                {
+                    Categorie.Add(Convert.ToInt32(st.Split(';')[0]), st.Split(';')[1]);
+                }
+                //foreach (Question q in Domande)
+                //{
+                //    if (Categorie.ContainsKey(q.Category))
+                //    {
+
+                //    }
+                //}
+
+            }
+            catch (Exception exc)
+            {
+                msg = new MessageDialog("Ho rilevato un'eccezione durante la lettura dei databases!\n" + exc.Message, "Hey user!");
+                await msg.ShowAsync();
+            }
+            #endregion
+            if(modoQuiz!="Time Attack")
+            {
+                int quanteDomande = 10;
+                domandeScelte = new Question[quanteDomande];
+                for (int i = 0; i < quanteDomande; i++)
+                {
+
+                    domandeScelte[i] = Domande[r.Next(0, Domande.Count)];
+                    if (modoQuiz == "Insane Mode" && domandeScelte[i].Level != 4)
+                    {
+                        i--;
+                    }
+                    else                    
+                        for (int a = 0; a < i; a++)                        
+                            if (domandeScelte[a] == domandeScelte[i])
+                            {
+                                //controllo se la domanda è già presente
+                                i--;
+                                break;
+                            }
+                }               
+            }
+            else
+            {
+                int quanteDomande = Domande.Count;
+                domandeScelte = new Question[quanteDomande];
+                for (int i = 0; i < quanteDomande; i++)
+                {
+                    domandeScelte[i] = Domande[r.Next(0, Domande.Count)];
+
+                    for (int a = 0; a < i; a++)
+                        if (domandeScelte[a] == domandeScelte[i])
+                        {
+                            //controllo se la domanda è già presente
+                            i--;
+                            break;
+                        }
+                }
+                //preparo attack con timer
+                //dt.Tick += new EventHandler(dt_Tick);
+                //dt.Interval = new TimeSpan(0, 0, 1);
+                //dt.Start();
+
+            }
+            //In ogni caso
+            VisualizzaDomanda();
+        }
+
+        private void dt_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -84,8 +158,19 @@ namespace QuizITT_WP
         /// serializable state.</param>
         private async void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            MessageDialog msg = new MessageDialog("Aho SaveState");
+            msg = new MessageDialog("Aho SaveState");
             await msg.ShowAsync();
+        }
+        
+        private void VisualizzaDomanda()
+        {
+            Question miaDomanda = domandeScelte[domandaCorrente];
+            lblDomanda.Text = miaDomanda.Text;
+            miaDomanda.MixAnswers();
+            btnR0.Content = miaDomanda.Answers[0].Text;
+            btnR1.Content = miaDomanda.Answers[1].Text;
+            btnR2.Content = miaDomanda.Answers[2].Text;
+            lblTitolo.Text = Categorie[miaDomanda.Category];
         }
 
         #region NavigationHelper registration
@@ -115,20 +200,40 @@ namespace QuizITT_WP
         }
 
         #endregion
-
-        private void btnR0_Click(object sender, RoutedEventArgs e)
+        private async void btnR_Click(object sender, RoutedEventArgs e)
         {
+            Button btn = sender as Button;
+            foreach (Answer risposta in domandeScelte[domandaCorrente].Answers)
+            {
+                if ((string)btn.Content == risposta.Text)
+                {
+                    if (risposta.IsRight)
+                    {
+                        risposteCorrette++;
+                        msg = new MessageDialog("Risposta Corretta", "Giusto!");
+                    }
+                    else
+                    {
+                        msg = new MessageDialog("Risposta Errata", "Sbagliato!");
+                    }
+                    await msg.ShowAsync();
+                    domandaCorrente++;
+                    if (lblIntestazione.Text != "Time Attack")
+                    {
+                        if (domandaCorrente < 10)
+                            VisualizzaDomanda();
+                        else
+                        {
+                            msg = new MessageDialog("Hai totalizzato " +risposteCorrette +" punti", "Game Over");
+                            await msg.ShowAsync();
+                            this.Frame.Navigate(typeof(MainPage));
+                        }
+                    }
+                        
+                }
 
-        }
-
-        private void btnR1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnR2_Click(object sender, RoutedEventArgs e)
-        {
-
+            }
+                
         }
     }
 }

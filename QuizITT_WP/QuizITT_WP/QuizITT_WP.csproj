@@ -85,8 +85,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Answer.cs" />
-    <Compile Include="Classes\Question.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Question.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
