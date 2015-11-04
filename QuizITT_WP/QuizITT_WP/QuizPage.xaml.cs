@@ -1,33 +1,24 @@
 ﻿using QuizITT_WP.Common;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
-using Windows.UI.ViewManagement;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Popups;
-using System.Threading;
+
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace QuizITT_WP
-{   
+{
     public sealed partial class QuizPage : Page
     {
         #region Dichiarazioni
         int domandaCorrente;
         int risposteCorrette = 0;
         Question[] domandeScelte;
+        bool bottoneCliccato = false;
         DispatcherTimer dt = new DispatcherTimer();
         Random r = new Random();
         public List<Question> Domande { get; set; }
@@ -55,12 +46,10 @@ namespace QuizITT_WP
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             string modoQuiz = e.NavigationParameter as string;
-            lblIntestazione.Text = modoQuiz;
-            msg = new MessageDialog("Aho LoadState"+modoQuiz.ToString());
-            await msg.ShowAsync();
+            lblIntestazione.Text = modoQuiz;            
             Domande = new List<Question>();
             Categorie = new Dictionary<int, string>();
-            #region carica domande
+            #region Carica domande
             try
             {
                 var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -147,19 +136,9 @@ namespace QuizITT_WP
         {
             throw new NotImplementedException();
         }
-
-        /// <summary>
-        /// Preserves state associated with this page in case the application is suspended or the
-        /// page is discarded from the navigation cache.  Values must conform to the serialization
-        /// requirements of <see cref="SuspensionManager.SessionState"/>.
-        /// </summary>
-        /// <param name="sender">The source of the event; typically <see cref="NavigationHelper"/></param>
-        /// <param name="e">Event data that provides an empty dictionary to be populated with
-        /// serializable state.</param>
-        private async void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        
+        private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            msg = new MessageDialog("Aho SaveState");
-            await msg.ShowAsync();
         }
         
         private void VisualizzaDomanda()
@@ -171,23 +150,12 @@ namespace QuizITT_WP
             btnR1.Content = miaDomanda.Answers[1].Text;
             btnR2.Content = miaDomanda.Answers[2].Text;
             lblTitolo.Text = Categorie[miaDomanda.Category];
+            bottoneCliccato = false;
         }
 
         #region NavigationHelper registration
 
-        /// <summary>
-        /// The methods provided in this section are simply used to allow
-        /// NavigationHelper to respond to the page's navigation methods.
-        /// <para>
-        /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="NavigationHelper.LoadState"/>
-        /// and <see cref="NavigationHelper.SaveState"/>.
-        /// The navigation parameter is available in the LoadState method 
-        /// in addition to page state preserved during an earlier session.
-        /// </para>
-        /// </summary>
-        /// <param name="e">Provides data for navigation methods and event
-        /// handlers that cannot cancel the navigation request.</param>
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
@@ -203,35 +171,47 @@ namespace QuizITT_WP
         private async void btnR_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            foreach (Answer risposta in domandeScelte[domandaCorrente].Answers)
+            if (!bottoneCliccato)
             {
-                if ((string)btn.Content == risposta.Text)
+                bottoneCliccato = true;
+                foreach (Answer risposta in domandeScelte[domandaCorrente].Answers)
                 {
                     if (risposta.IsRight)
                     {
-                        risposteCorrette++;
-                        msg = new MessageDialog("Risposta Corretta", "Giusto!");
-                    }
-                    else
-                    {
-                        msg = new MessageDialog("Risposta Errata", "Sbagliato!");
-                    }
-                    await msg.ShowAsync();
-                    domandaCorrente++;
-                    if (lblIntestazione.Text != "Time Attack")
-                    {
-                        if (domandaCorrente < 10)
-                            VisualizzaDomanda();
+                        if ((string)btn.Content == risposta.Text)
+                        {
+                            risposteCorrette++;
+                            btn.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                            //msg = new MessageDialog("Risposta Corretta", "Giusto!");  
+                        }
                         else
                         {
-                            msg = new MessageDialog("Hai totalizzato " +risposteCorrette +" punti", "Game Over");
-                            await msg.ShowAsync();
-                            this.Frame.Navigate(typeof(MainPage));
+                            btn.Background = new SolidColorBrush(Windows.UI.Colors.Red);
+                            if ((string)btnR0.Content == risposta.Text)
+                                btnR0.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                            if ((string)btnR1.Content == risposta.Text)
+                                btnR1.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                            if ((string)btnR2.Content == risposta.Text)
+                                btnR2.Background = new SolidColorBrush(Windows.UI.Colors.Green);
                         }
                     }
-                        
                 }
-
+            }
+            else
+            {
+                btnR0.Background = null;
+                btnR1.Background = null;
+                btnR2.Background = null; 
+                domandaCorrente++;
+                if (lblIntestazione.Text != "Time Attack")                
+                    if (domandaCorrente < 10)
+                        VisualizzaDomanda();
+                    else
+                    {
+                        msg = new MessageDialog("Hai totalizzato " + risposteCorrette + " punti", "Game Over");
+                        await msg.ShowAsync();
+                        this.Frame.Navigate(typeof(MainPage));
+                    }
             }
                 
         }

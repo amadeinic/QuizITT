@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="46bbc2c1-88d1-483a-bd03-d1d5d727d49c" Publisher="CN=nicol" Version="1.0.0.100" />
+  <Identity Name="46bbc2c1-88d1-483a-bd03-d1d5d727d49c" Publisher="CN=nicol" Version="1.1.7236.900" />
   <mp:PhoneIdentity PhoneProductId="46bbc2c1-88d1-483a-bd03-d1d5d727d49c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>QuizITT</DisplayName>

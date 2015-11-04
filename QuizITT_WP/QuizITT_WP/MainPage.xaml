@@ -51,7 +51,7 @@
                         <Button Name="btnPlayTime" 
                                 Content="Time Attack" 
                                 FontSize="26" 
-                                HorizontalAlignment="Stretch" Click="btnPlayTime_Click"></Button>
+                                HorizontalAlignment="Stretch" Click="btnPlayTime_Click" IsEnabled="False"></Button>
                         <Button Name="btnPlayInsane" 
                                 Content="Insane Mode" 
                                 FontSize="26"                                 
