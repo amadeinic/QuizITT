@@ -17,7 +17,7 @@
         </Grid.ChildrenTransitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>            
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -29,6 +29,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Vertical">
             <TextBlock Margin="10" Name="lblDomanda" FontSize="22" TextWrapping="Wrap" MinHeight="200">Segnaposto per la domanda, cantami o diva del pelide achille l'ira funesta</TextBlock>
+            <TextBlock Name="lblIndicazione" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom">Premi di nuovo la risposta per proseguire</TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom">
             <Button Name="btnR0" HorizontalAlignment="Stretch" Content="Risposta 1 index 0" FontSize="22" Click="btnR_Click" Margin="5,0" Background="{x:Null}"/>

@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Pivot Name="pvtMain">
@@ -23,10 +23,10 @@
                                 Grid.Row="0">
                         <TextBlock Name="lblCiao" 
                                    FontSize="18" 
-                                   Text="Ciao utente! Bentornato su QuizITT"/>
+                                   Text="Ciao utente ! Bentornato su QuizITT" TextWrapping="Wrap"/>
                         <TextBlock Name="lblIndicazioni" 
                                    Margin="1" 
-                                   FontSize="12" 
+                                   FontSize="14" 
                                    Text="Scegli una modalità per iniziare"/>
                     </StackPanel>
 
@@ -35,8 +35,8 @@
                         <Image Source="Assets/brain.png"  
                                Margin="10" 
                                Height="180"></Image>
-                        <TextBlock Text="Tocca per vedere i tuoi progressi" 
-                                   FontSize="12" 
+                        <TextBlock Text="Are you the best in class?" 
+                                   FontSize="14" 
                                    HorizontalAlignment="Center"></TextBlock>
                     </StackPanel>
 
@@ -95,7 +95,7 @@
                             <ComboBoxItem Content="Costruzioni"/>
                         </ComboBox>
 
-                        <Button Name="btnImpostaUtente" Content="Imposta utente" Grid.Row="4" HorizontalAlignment="Stretch" Grid.ColumnSpan="3"></Button>
+                        <Button Name="btnImpostaUtente" Content="Imposta utente" Grid.Row="4" HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Click="btnImpostaUtente_Click"></Button>
 
                         <Button Name="btnReset" Content="Reset totale" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.ColumnSpan="3"></Button>
 
